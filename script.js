@@ -3,19 +3,15 @@ function createPhoneNumber(numbers){
 
     var telephoneFormat = "(";
     
-    for(var i; i = 0; i < numbers.Length + 1){
-        telephoneFormat = "("
-        {
-            telephoneFormat =+ numbers[i]; 
+    for(var i = 0; i < numbers.length; i++){
+        if(i === 3){
+        telephoneFormat += ") ";
         }
-        if (i = 3)
+        else if(i === 6)
         {
-            telephoneFormat =+ ") ";
+            telephoneFormat += "-";
         }
-        if (i = 6)
-        {
-            telephoneFormat =+ "-";
-        }
+        telephoneFormat += numbers[i];
     } 
     return telephoneFormat;            
 }
@@ -24,6 +20,6 @@ function changeText(){
     var phone;
     
     document.getElementById("demoText").innerHTML = "Robert Dannelly JavaScript Guru!!!";
-    createPhoneNumber();
-    document.getElementById("phone").innerHTML = phone;
+    
+    document.getElementById("phone").innerHTML = createPhoneNumber();
 }
